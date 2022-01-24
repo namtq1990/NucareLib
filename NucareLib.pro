@@ -10,12 +10,20 @@ CONFIG += c++14
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    Common/Common.cpp \
-    Model/Spectrum.cpp
+    Common/BaseCommon.cpp \
+    Model/Event.cpp \
+    Model/Isotopes.cpp \
+    Model/Spectrum.cpp \
+    Nucare/NcManager.cpp
 
 HEADERS += \
     Common/BaseCommon.h \
-    Model/Spectrum.h
+    Model/Event.h \
+    Model/Isotopes.h \
+    Model/Spectrum.h \
+    Nucare/Hw/HwConnector.h \
+    Nucare/NcManager.h \
+    Nucare/Signal.h
 
 DEFINES += MAKE_TEST_LIB
 

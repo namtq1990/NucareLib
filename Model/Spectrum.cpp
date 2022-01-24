@@ -10,16 +10,23 @@
 
 using namespace std;
 
+Spectrum::Spectrum() {
+
+}
+
 void Spectrum::setData(std::array<double, nucare::CHSIZE>& data) {
     setData(data.data(), data.size());
 }
 
-void Spectrum::setData(double* data, int length) {
-//	std::copy(data, length, mSPC.data());
-    memcpy(mSPC.data(), data, length);
+void Spectrum::setData(double* data, const int& length) {
+    memcpy(mSPC.data(), data, length * sizeof(double));
 }
 
-void Spectrum::setDate(const time_t time) {
+void Spectrum::setData(std::array<double, nucare::CHSIZE> &&data) {
+    mSPC = data;
+}
+
+void Spectrum::setDate(const time_t& time) {
     mDate = time;
 }
 
